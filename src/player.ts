@@ -23,7 +23,7 @@ export class Player {
 
   async setCanvas(selector: string): Promise<any> {
     return new Promise((resolver, rej) => {
-      const query = tt.createSelectorQuery();
+      const query = uni.createSelectorQuery();
       query
         .select(selector)
         .fields({ node: true, size: true })
@@ -38,7 +38,7 @@ export class Player {
             rej("canvas context not found.");
             return;
           }
-          const dpr = tt.getSystemInfoSync().pixelRatio;
+          const dpr = uni.getSystemInfoSync().pixelRatio;
           this.canvas!.width = res[0].width * dpr;
           this.canvas!.height = res[0].height * dpr;
           resolver(undefined);
@@ -91,7 +91,7 @@ export class Player {
       if (typeof data === "string") {
         img.src = data;
       } else {
-        img.src = "data:image/png;base64," + tt.arrayBufferToBase64(data);
+        img.src = "data:image/png;base64," + uni.arrayBufferToBase64(data);
       }
     });
   }
@@ -164,7 +164,7 @@ export class Player {
     this._dynamicImage[forKey] = img;
   }
 
-  setText(dynamicText: DynamicText, forKey: string) {
+  seuniext(dynamicText: DynamicText, forKey: string) {
     this._dynamicText[forKey] = dynamicText;
   }
 
