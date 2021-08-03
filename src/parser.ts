@@ -6,13 +6,12 @@ export class Parser {
   load(url: string): Promise<VideoEntity> {
     return new Promise((resolver, rejector) => {
       if (url.indexOf("http://") === 0 || url.indexOf("https://") === 0) {
-        tt.request({
+        uni.request({
           url: url,
           responseType: "arraybuffer",
           success: (res) => {
             const inflatedData = inflate(res.data as any);
             const movieData = ProtoMovieEntity.decode(inflatedData);
-
             resolver(new VideoEntity(movieData));
           },
           fail: (error) => {
@@ -20,7 +19,7 @@ export class Parser {
           },
         });
       } else {
-        tt.getFileSystemManager().readFile({
+        uni.getFileSystemManager().readFile({
           filePath: url,
           success: (res) => {
             const inflatedData = inflate(res.data as any);
