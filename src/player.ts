@@ -164,7 +164,7 @@ export class Player {
     this._dynamicImage[forKey] = img;
   }
 
-  seuniext(dynamicText: DynamicText, forKey: string) {
+  setText(dynamicText: DynamicText, forKey: string) {
     this._dynamicText[forKey] = dynamicText;
   }
 

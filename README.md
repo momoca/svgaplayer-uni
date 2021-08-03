@@ -12,7 +12,7 @@
 
 ### 原生小程序
 
-1. 直接复制 `./dist/svgaplayer.tt.js` 到你的小程序工程目录下。
+1. 直接复制 `./dist/svgaplayer.uni.js` 到你的小程序工程目录下。
 
 2. 在需要添加播放器的 `wxml` 文件内，添加 `canvas` 组件，注意 canvas 的 id 必填，下一步会用到，type 必须为 2d。
 
@@ -25,7 +25,7 @@
 3. 在需要播放的时机，这里是 `onLoad`，执行以下代码，即可播放动画。
 
 ```js
-const { Parser, Player } = require("../../libs/svgaplayer.tt"); // 此处替换为 svgaplayer.tt.js 放置位置
+const { Parser, Player } = require("../../libs/svgaplayer.uni"); // 此处替换为 svgaplayer.uni.js 放置位置
 
 Page({
   data: {
@@ -47,7 +47,7 @@ Page({
 
 ### Taro
 
-1. 通过 `npm install git+https://github.com/svga/svgaplayer-tt.git --save` 安装依赖。
+1. 通过 `npm install git+https://github.com/svga/svgaplayer-uni.git --save` 安装依赖。
 
 2. 参照以下代码添加 Canvas 并配置动画。
 
