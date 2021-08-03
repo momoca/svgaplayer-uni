@@ -1,4 +1,4 @@
-# svgaplayer-tt
+# svgaplayer-uni
 
 专为字节跳动小程序开发的 SVGA 播放器，已在 iOS 及 Android 手机上测试通过，由于字节跳动开发工具限制，暂不支持在开发工具预览。
 
